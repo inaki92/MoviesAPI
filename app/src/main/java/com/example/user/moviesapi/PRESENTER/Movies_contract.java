@@ -10,7 +10,7 @@ public interface Movies_contract {
     public interface View_Movies {
 
         void displayProgressDialog();
-        void moviesList(List<MoviesObject> moviesModel);
+        void moviesList(MoviesObject moviesModel);
         void dismissProgressDialog();
     }
 

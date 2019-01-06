@@ -29,7 +29,7 @@ public class Movies_Presenter implements Movies_contract.Presenter_Movies {
     public void getMoviesFromAPI() {
         iMovies_interacter.getMoviesList().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<MoviesObject>>() {
+                .subscribe(new Observer<MoviesObject>() {
                     @Override
                     public void onCompleted() {
                         iView_MoviesList.displayProgressDialog();
@@ -41,8 +41,8 @@ public class Movies_Presenter implements Movies_contract.Presenter_Movies {
                     }
 
                     @Override
-                    public void onNext(List<MoviesObject> moviesObjects) {
-                        iView_MoviesList.moviesList(moviesObjects);
+                    public void onNext(MoviesObject moviesObject) {
+                        iView_MoviesList.moviesList(moviesObject);
                     }
                 });
 
