@@ -22,4 +22,6 @@ public class RecyclerViewTest {
     public void matchRecyclerView(){
         onView(ViewMatchers.withId(R.id.recycler_view));
     }
+
+
 }
